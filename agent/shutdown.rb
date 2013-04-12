@@ -6,7 +6,7 @@ module MCollective
       validate :time, String
       validate :message, String
 
-      time = Integer(request[:time])
+      time = request[:time]
       message = request[:message]
 
       reply[:status] = run("echo shutdown -r '#{time}' '#{message}' | at now + 1 minutes")

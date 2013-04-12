@@ -16,7 +16,7 @@ metadata    :name        => "shutdown",
           :validation => '^[0-9]+$',
           :type => :string,
           :maxlength => 3,
-          :optional => true
+          :optional => false
 
 
     input :message,
@@ -39,4 +39,6 @@ action "cancel", :description => "Cancel shutdown" do
     output :status,
            :description => "Confirms",
            :display_as  => "Message"    
+end
+
 end      
