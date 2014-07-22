@@ -26,7 +26,7 @@ module MCollective
       time = Integer(request[:time])
       message = request[:message]
 
-      reply[:status] = run("echo shutdown -P '#{time}' '#{message}' | at now + 1 minutes")
+      reply[:status] = run("echo shutdown -hP '#{time}' '#{message}' | at now + 1 minutes")
       
       if reply[:status] == 0
         reply[:status] = "Shutdown scheduled in #{time} (+ 1 minute) with message: #{message}"
