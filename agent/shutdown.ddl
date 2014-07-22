@@ -23,6 +23,7 @@ metadata    :name        => "shutdown",
           :prompt      => "Message",
           :description => "Message before #{act}",
           :type        => :string,
+          :validation  => '.',
           :optional    => false,
           :maxlength   => 50
 
