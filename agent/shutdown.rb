@@ -5,7 +5,7 @@ module MCollective
     { 'reboot' => '-r', 'shutdown' => '-P' }.each do |act,flags|
     action act do
       validate :time, String
-      validate :message, String
+      validate :message, :shellsafe
 
       time = request[:time]
       message = request[:message]
