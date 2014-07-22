@@ -4,7 +4,7 @@ module MCollective
     
     action "reboot" do
       validate :time, String
-      validate :message, String
+      validate :message, :shellsafe
 
       time = request[:time]
       message = request[:message]
@@ -21,7 +21,7 @@ module MCollective
 
     action "poweroff" do
       validate :time, String
-      validate :message, String
+      validate :message, :shellsafe
 
       time = Integer(request[:time])
       message = request[:message]
