@@ -19,7 +19,7 @@ module MCollective
 
     end
 
-    action "poweroff" do
+    action "shutdown" do
       validate :time, String
       validate :message, String
 
