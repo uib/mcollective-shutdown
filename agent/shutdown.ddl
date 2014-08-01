@@ -12,16 +12,16 @@ metadata    :name        => "shutdown",
 
     input :time,
           :prompt => "Time",
-          :description => "Time before shutdown",
-          :validation => '^[0-9]+$',
+          :description => "Time before #{act}",
+          :validation => '^([0-9]{1,2}:[0-9]{2}|\+[0-9]+|now)$',
           :type => :string,
-          :maxlength => 3,
+          :maxlength => 5,
           :optional => false
 
 
     input :message,
           :prompt      => "Message",
-          :description => "Message before shutdown",
+          :description => "Message before #{act}",
           :type        => :string,
           :validation  => '\A[a-zA-Z0-9_-]+\z',
           :optional    => false,
