@@ -2,10 +2,10 @@ module MCollective
  module Agent
   class Shutdown<RPC::Agent
     
-    { 'reboot' => '-r', 'poweroff' => '-P' }.each do |act,flags|
+    { 'reboot' => '-r', 'shutdown' => '-hP' }.each do |act,flags|
     action act do
       validate :time, String
-      validate :message, String
+      validate :message, :shellsafe
 
       time = request[:time]
       message = request[:message]

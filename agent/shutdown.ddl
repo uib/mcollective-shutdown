@@ -23,7 +23,7 @@ metadata    :name        => "shutdown",
           :prompt      => "Message",
           :description => "Message before #{act}",
           :type        => :string,
-          :validation  => '\A[a-zA-Z0-9_-]+\z',
+          :validation  => '.',
           :optional    => false,
           :maxlength   => 50
 
